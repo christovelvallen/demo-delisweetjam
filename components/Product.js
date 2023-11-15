@@ -10,9 +10,9 @@ export default function Product() {
 	return (
 		<>
 			<div className="py-16">
-				<div className="px-4 max-w-[700px] mx-auto md:text-center">
+				<div className="px-4 max-w-[650px] mx-auto md:text-center">
 					<div className="text-2xl font-extrabold">
-						<p>Makan yang manis-manis tapi tetap sehat?</p>
+						<p>Cari selai yang manis dan enak tapi tetap sehat?</p>
 						<p>Delisweet Jam adalah pilihan yang tepat.</p>
 					</div>
 					<p className="mt-4">
@@ -66,7 +66,7 @@ const ProductList = () => {
 			id: 2,
 			name: 'Delisweet Jam',
 			varian: 'Selai Gula Aren',
-			size: '50 ml',
+			size: '60 ml',
 			price: 'Rp 8.000',
 			src: '/assets/product/2.png',
 		},
