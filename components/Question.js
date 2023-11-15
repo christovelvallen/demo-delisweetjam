@@ -1,5 +1,8 @@
 'use client';
 
+import Link from 'next/link';
+import { BiLogoWhatsapp } from 'react-icons/bi';
+
 export default function Question() {
 	const items = [
 		{
@@ -18,13 +21,13 @@ export default function Question() {
 			id: 3,
 			question: 'Apa manfaat mengkonsumsi Delisweet Jam?',
 			answer:
-				'Gula aren sering dianggap sebagai gula alami yang lebih baik untuk kesehatan karena memiliki indeks glikemik yang lebih rendah dari pada gula pasir. Gula aren dapat membantu peningkatan produksi sel darah merah. Hal ini terjadi berkat vitamin B dalam gula ini meskipun dalam jumhlah kecil. ',
+				'Gula aren sering dianggap sebagai gula alami yang lebih baik untuk kesehatan karena memiliki indeks glikemik yang lebih rendah dari pada gula pasir. Gula aren dapat membantu peningkatan produksi sel darah merah. Hal ini terjadi berkat vitamin B dalam gula ini meskipun dalam jumlah kecil. ',
 		},
 		{
 			id: 4,
 			question: 'Bagaimana cara memesan Delisweet Jam?',
 			answer:
-				'Untuk saat ini kami hanya menerima pesanan lewat whatsapp, anda bisa langsung saja menekan button order now pada website dan akan langsung diarahkan untuk proses pemesanan selanjutnya.',
+				'Untuk saat ini kami hanya menerima pesanan lewat whatsapp, anda bisa langsung saja menekan button order now pada website dan akan langsung diarahkan untuk proses pemesanan.',
 		},
 	];
 
@@ -33,7 +36,7 @@ export default function Question() {
 			{items?.map(item => (
 				<div
 					key={item.id}
-					className="collapse collapse-arrow bg-white text-myColor-dark py-2 rounded-2xl shadow-sm hover:opacity-80"
+					className="collapse collapse-arrow bg-white text-myColor-dark py-2 rounded-2xl shadow-sm"
 				>
 					<input type="radio" name="my-accordion-2" />
 					<div className="collapse-title text-xl font-bold">
@@ -41,9 +44,23 @@ export default function Question() {
 					</div>
 					<div className="collapse-content">
 						<p>{item.answer}</p>
+						{item.id === 4 ? <ButtonOrder /> : null}
 					</div>
 				</div>
 			))}
 		</div>
 	);
 }
+
+const ButtonOrder = () => {
+	return (
+		<div className="pt-4">
+			<Link href={'https://wa.me/6281524263428'} target="_blank">
+				<button className="btn bg-green-500 text-white rounded-2xl shadow-xl">
+					<BiLogoWhatsapp />
+					Order Now
+				</button>
+			</Link>
+		</div>
+	);
+};
